@@ -1,26 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-noir-black: #09090b;
+  --color-noir-charcoal: #121215;
+  --color-noir-card: #16161b;
+  --color-noir-card-hover: #1e1e24;
+  --color-noir-border: rgba(197, 168, 128, 0.15);
+  --color-noir-border-strong: rgba(197, 168, 128, 0.35);
+
+  --color-gold-100: #fbf5eb;
+  --color-gold-200: #f3e3ca;
+  --color-gold-300: #e5c392;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #c5a880;
+  --color-gold-600: #a48255;
+  --color-gold-700: #7a5e38;
+
+  --color-cream-50: #fdfbf9;
+  --color-cream-100: #f8f5f0;
+  --color-cream-200: #f4f0eb;
+  --color-cream-300: #e5ded5;
+  --color-cream-400: #a8a298;
+  --color-cream-500: #736d64;
+
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #09090b;
+  --foreground: #f4f0eb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #09090b;
+  color: #f4f0eb;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #c5a880;
+  selection-color: #09090b;
+}
+
+::selection {
+  background-color: #c5a880;
+  color: #09090b;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+  border: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a880;
+}
+
+/* Luxury typography styling */
+.font-display {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f5e6d3 0%, #c5a880 50%, #e5c392 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-color: rgba(197, 168, 128, 0.2);
+}
+
+.gold-border-glow:hover {
+  border-color: rgba(197, 168, 128, 0.5);
+  box-shadow: 0 0 25px rgba(197, 168, 128, 0.12);
+}
+
+/* Glass & Card effects (subtle, editorial) */
+.editorial-card {
+  background: linear-gradient(180deg, rgba(22, 22, 27, 0.9) 0%, rgba(14, 14, 17, 0.95) 100%);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-card:hover {
+  border-color: rgba(197, 168, 128, 0.4);
+  transform: translateY(-2px);
 }
